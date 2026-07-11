@@ -1,0 +1,13 @@
+### Получить все заявки
+GET http://localhost:8080/tickets
+
+###
+
+### Создать заявку
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+  "title": "Не работает интернет",
+  "description": "Постоянно пропадает"
+}
