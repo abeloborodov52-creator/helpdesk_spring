@@ -11,4 +11,6 @@ public interface TicketRepository {
     List<Ticket> findAll();
 
     Ticket findById(Long id);
+
+    void deleteById(long id);
 }

@@ -14,4 +14,6 @@ public interface TicketService {
     Ticket findById(Long id);
 
     Ticket changeStatus(long id, TicketStatus status);
+
+    void deleteTicket(long id);
 }

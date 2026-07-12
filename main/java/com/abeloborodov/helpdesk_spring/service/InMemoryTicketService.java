@@ -48,6 +48,11 @@ public class InMemoryTicketService implements TicketService {
         return foundTicket;
     }
 
+    @Override
+    public void deleteTicket(long id) {
+        repository.deleteById(id);
+    }
+
     @PostConstruct
     public void init() {
         createTicket("Не работает мышь", "Компьютер не видит мышь");
