@@ -11,6 +11,9 @@ public class Comment {
 
     private LocalDateTime createdAt;
 
+    public Comment() {
+    }
+
     public Comment(Long id, String text, User author, LocalDateTime createdAt) {
         this.id = id;
         this.text = text;

@@ -1,5 +1,6 @@
 package com.abeloborodov.helpdesk_spring.controller;
 
+import com.abeloborodov.helpdesk_spring.dto.AssignUserRequest;
 import com.abeloborodov.helpdesk_spring.dto.ChangeStatusRequest;
 import com.abeloborodov.helpdesk_spring.dto.CreateTicketRequest;
 import com.abeloborodov.helpdesk_spring.model.Ticket;
@@ -33,8 +34,8 @@ public class TicketController {
 
         return ticketService.createTicket(
                 request.getTitle(),
-                request.getDescription()
-
+                request.getDescription(),
+                request.getAuthorId()
         );
     }
     @PutMapping("/{id}/status")
@@ -43,6 +44,19 @@ public class TicketController {
             @RequestBody ChangeStatusRequest request) {
 
         return ticketService.changeStatus(id, request.getStatus());
+    }
+    @PutMapping("/{id}/assignee")
+    public Ticket assignUser(
+            @PathVariable long id,
+            @RequestBody AssignUserRequest request) {
+
+        return ticketService.assignUser(id, request.getUserId());
+    }
+
+    @DeleteMapping("/{ticketId}/assignee")
+    public Ticket removeAssignee(@PathVariable Long ticketId) {
+
+        return ticketService.removeAssignee(ticketId);
     }
 
     @DeleteMapping("/{id}")

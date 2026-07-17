@@ -1,0 +1,12 @@
+{
+    "title":"Интернет",
+    "description":"Не работает",
+    "authorId":1
+}
+{
+    "username": "alex"
+}
+{
+    "text": "Я уже занимаюсь этой заявкой",
+    "authorId": 1
+}

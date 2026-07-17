@@ -1,5 +1,6 @@
 package com.abeloborodov.helpdesk_spring.service;
 
+import com.abeloborodov.helpdesk_spring.model.Comment;
 import com.abeloborodov.helpdesk_spring.model.Ticket;
 import com.abeloborodov.helpdesk_spring.model.TicketStatus;
 
@@ -7,13 +8,23 @@ import java.util.List;
 
 public interface TicketService {
 
-    Ticket createTicket(String title, String description);
+    Ticket createTicket(String title, String description, long authorId);
 
     List<Ticket> getAllTickets();
 
     Ticket findById(Long id);
 
     Ticket changeStatus(long id, TicketStatus status);
+
+    Ticket assignUser(long ticketId, long userId);
+
+    Ticket removeAssignee(long ticketId);
+
+    Comment addComment(long ticketId,
+                       String text,
+                       Long authorId);
+
+    List<Comment> getComments(long ticketId);
 
     void deleteTicket(long id);
 }

@@ -4,6 +4,7 @@ public class CreateTicketRequest {
 
     private String title;
     private String description;
+    private long authorId;
 
     public CreateTicketRequest() {
     }
@@ -22,5 +23,13 @@ public class CreateTicketRequest {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(long authorId) {
+        this.authorId = authorId;
     }
 }
